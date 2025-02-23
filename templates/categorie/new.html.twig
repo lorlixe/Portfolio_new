@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% set action = app.current_route == 'app_categorie_new' ? 'Ajout' : 'Édition' %}
+{% block title %}
+	{{ action }}
+	d'auteur
+{% endblock %}
+
+{% block body %}
+
+
+	<header>
+		<div id="current-user"></div>
+		<div id="title-page">
+			<div class="flex-header">
+				<h1>Categorie
+				</h1>
+			</div>
+		</div>
+	</header>
+
+	<div id="content">
+
+
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button type="submit" class="button button-submit">Envoyer</button>
+		{{ form_end(form) }}
+	</div>
+
+{% endblock %}
